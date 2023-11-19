@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dnd</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/fabric.js/3.4.0/fabric.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+</head>
+<body>
+    <button class="button" onclick="Cut();"> CUT (CTRL+X)</button>
+    <button class="button" onclick="Copy();"><i class=""></i> COPY (CTRL+C)</button>
+    <button class="button" onclick="Paste();"><i class=""></i> PASTE (CTRL+V)</button>
+    <p>You can select,rotate,cut,copy,paste the object</p>
+    <div id="container">
+    <span id="text1"></span>
+    <span id="text2"></span>
+</div>
+
+<svg id="filters">
+    <defs>
+        <filter id="threshold">
+            <feColorMatrix in="SourceGraphic" type="matrix" values="1 0 0 0 0
+                  0 1 0 0 0
+                  0 0 1 0 0
+                  0 0 0 255 -140" />
+        </filter>
+    </defs>
+</svg>
+    
+    <canvas width="1000" height="500" id="c"></canvas>
+</body>
+<script src="script.js"></script>
+</html>
